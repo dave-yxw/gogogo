@@ -1,0 +1,90 @@
+set nocompatible
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#rc()
+Bundle 'gmarik/vundle.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sukima/xmledit'
+Bundle 'sjl/gundo.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'klen/python-mode'
+Bundle 'Valloric/ListToggle'
+Bundle 'SirVer/ultisnips'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 't9md/vim-quickhl'
+Bundle 'scrooloose/nerdcommenter'
+
+Bundle 'taglist.vim'
+Bundle 'vimwiki'
+Bundle 'winmanager'
+Bundle 'Markdown'
+Bundle 'c.vim'
+Bundle 'snipMate'
+Bundle 'SuperTab'
+Bundle 'The-NERD-tree'
+
+
+
+filetype plugin indent on
+
+
+" 设置中文帮助，需先安装中文帮助文档
+" wget http://nchc.dl.sourceforge.net/sourceforge/vimcdoc/vimcdoc-1.5.0.tar.gz && tar -xzvf .. && cd vim... && ./vimcdoc.sh -
+i
+set encoding=utf-8
+
+syntax enable
+syntax on
+
+set cindent
+set autoindent
+set noexpandtab
+set smarttab
+set nu
+set hlsearch
+"status bar, no effect?
+set statusline=[POS=%l/%L,%v]\ [%{strftime(\"%y/%m/%d\ -\ %H:%M\")}]\ \ %p%%\ %f%m
+set laststatus=2
+
+set shiftwidth=4
+set tabstop=4
+"show match 
+set sm
+"winmanager
+let g:winManagerWindowLayout='FileExplorer|TagList'
+
+nmap wm :WMToggle<CR>
+"window navigate
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplorerMoreThanOne = 0
+"ctags rebuild
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"code complete
+set nocp
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
+set completeopt=longest,menu
+set ofu=syntaxcomplete#Complete
+
+
+"allow move to next line
+set whichwrap+=<,>,h,l
+
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+"allow mouse move
+set mouse=a
+
+"插入时间日期，姓名
+iab cqmd --[名称: <c-r>=bufname("%")<cr>]<CR>--[作者: 弄雨]<CR>--[描述: ]<CR>--[Created: <c-r>=strftime("20%y年%m月%d日 %H:%M
+:%S")<cr>]<CR>--[Modified: 弄雨 <c-r>=strftime("20%y年%m月%d日 %H:%M:%S")<cr>]<CR>--hdfs=/group/aladdin/xiaowei.yanxw/sql/<CR
+>
+iab cdate <c-r>=strftime("20%y年%m月%d日 %H:%M:%S")<cr>
+iab ename Xiaowei Yan
+iab cname 严孝伟
