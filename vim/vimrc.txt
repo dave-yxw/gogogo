@@ -29,7 +29,7 @@ Bundle 'The-NERD-tree'
 filetype plugin indent on
 
 
-" ÉèÖÃÖĞÎÄ°ïÖú£¬ĞèÏÈ°²×°ÖĞÎÄ°ïÖúÎÄµµ
+" è®¾ç½®ä¸­æ–‡å¸®åŠ©ï¼Œéœ€å…ˆå®‰è£…ä¸­æ–‡å¸®åŠ©æ–‡æ¡£
 " wget http://nchc.dl.sourceforge.net/sourceforge/vimcdoc/vimcdoc-1.5.0.tar.gz && tar -xzvf .. && cd vim... && ./vimcdoc.sh -
 i
 set encoding=utf-8
@@ -81,10 +81,7 @@ let Tlist_Exit_OnlyWindow=1
 "allow mouse move
 set mouse=a
 
-"²åÈëÊ±¼äÈÕÆÚ£¬ĞÕÃû
-iab cqmd --[Ãû³Æ: <c-r>=bufname("%")<cr>]<CR>--[×÷Õß: ÅªÓê]<CR>--[ÃèÊö: ]<CR>--[Created: <c-r>=strftime("20%yÄê%mÔÂ%dÈÕ %H:%M
-:%S")<cr>]<CR>--[Modified: ÅªÓê <c-r>=strftime("20%yÄê%mÔÂ%dÈÕ %H:%M:%S")<cr>]<CR>--hdfs=/group/aladdin/xiaowei.yanxw/sql/<CR
->
-iab cdate <c-r>=strftime("20%yÄê%mÔÂ%dÈÕ %H:%M:%S")<cr>
+"æ’å…¥æ—¶é—´æ—¥æœŸï¼Œå§“å
+iab cdate <c-r>=strftime("20%yå¹´%mæœˆ%dæ—¥ %H:%M:%S")<cr>
 iab ename Xiaowei Yan
-iab cname ÑÏĞ¢Î°
+iab cname ä¸¥å­ä¼Ÿ
