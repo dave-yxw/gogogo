@@ -1,0 +1,20 @@
+<div ng-app="" ng-controller="personController">
+	<!-- 
+		在controller里设置$scope里的内容，在html里可以直接使用$scope的变量、函数
+	-->
+	First Name: <input type="text" ng-model="firstName"><br>
+	Last Name: <input type="text" ng-model="lastName"><br>
+	<br>
+	Full Name: {{fullName()}}
+
+</div>
+
+<script>
+function personController($scope) {
+	$scope.firstName = "John";
+	$scope.lastName = "Doe";
+	$scope.fullName = function() {
+		return $scope.firstName + " " + $scope.lastName;
+	}
+}
+</script>

@@ -1,0 +1,9 @@
+<div ng-app="" ng-init="quantity=1;cost=5">
+	<input type="text" ng-model="cost"></input>
+	<input type="text" ng-model="cost"></input>
+
+	<!--ng-bind等同于表达式，直接替换的。两者写的位置不同 -->
+	<p>Total in dollar: {{ quantity * cost  }}</p>
+	<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+
+</div>

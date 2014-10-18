@@ -1,0 +1,55 @@
+<!--
+currency	Format a number to a currency format.
+filter	Select a subset of items from an array.
+lowercase	Format a string to lower case.
+orderBy	Orders an array by an expression.
+uppercase	Format a string to upper case.
+-->
+
+<div ng-app="" ng-controller="personController">
+	<p>The name is {{ lastName | uppercase  }}</p>
+</div>
+
+<div ng-app="" ng-controller="personController">
+	<p>The name is {{ lastName | lowercase }}</p>
+</div>
+
+
+<div ng-app="" >
+	Quantity: <input type="number" ng-model="quantity">
+	Price: <input type="number" ng-model="price">
+	<p>Total = {{ (quantity * price) | currency  }}</p>
+</div>
+
+<div ng-app="" ng-controller="namesController">
+	<ul>
+		<li ng-repeat="x in names | orderBy:'country'">
+		{{ x.name + ', ' + x.country  }}
+		</li>
+	</ul>
+
+	<p><input type="text" ng-model="test"></p>
+	<ul>
+		<li ng-repeat="x in names | filter:test | orderBy:'country'">
+		{{ (x.name | uppercase) + ', ' + x.country  }}
+		</li>
+	</ul>
+</div>
+
+<script>
+function personController($scope) {
+	$scope.firstName = "John";
+	$scope.lastName = "Doe";
+	$scope.fullName = function() {
+		return $scope.firstName + " " + $scope.lastName;
+	}
+}
+
+function namesController($scope) {
+	$scope.names = [
+	{name:'Jani',country:'Norway'},
+	{name:'Hege',country:'Sweden'},
+	{name:'Kai',country:'Denmark'}
+	];
+}
+</script>
